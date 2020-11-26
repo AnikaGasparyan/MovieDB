@@ -1,0 +1,12 @@
+.preview-section {
+    padding-bottom: 20px;
+    background-color: rgba(43, 49, 49, 0.308);
+}
+.preview-text{
+    padding-top: 20px;
+    /* color: #db2619d8; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 20px;
+}

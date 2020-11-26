@@ -1,0 +1,8 @@
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    width: 85%;
+    margin-left: 80px;
+    margin-top: 20px;
+}

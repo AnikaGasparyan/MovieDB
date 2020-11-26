@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(33, 33, 33, 0.9)
+}
+.logo{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.nav-bar{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    font-size: 20px;
+    padding: 20px 0 0 0 ;
+    margin: 0;
+}
+li a {
+    text-decoration: none;
+    color: white;
+
+}
+.input-dropdown{
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+}
+.search {
+    width: 190px;
+    height: 25px;
+    border-radius: 20px;
+    border: 1px solid grey;
+}
+::placeholder{
+    color: grey;
+}
+.select {
+    width: 100px;
+    height: 29px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    margin-right: 5px;
+    color: grey; 
+}
+.error {
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: rgb(201, 26, 26);
+}

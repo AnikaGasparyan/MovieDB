@@ -1,0 +1,30 @@
+.movie-card {
+    width: 88%;
+    display: flex;
+    margin: 70px 20px 0 50px ;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(225, 225, 225, 0.2);
+}
+.movie-card img {
+    border-radius: 10px 0 0 10px;
+}
+.wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+h3{
+    margin: 0;
+    padding: 0;
+}
+.title {
+    height: fit-content;
+    width: 100%;
+    margin-left: 5px;
+}
+.overview {
+    margin-right: 20px;
+    width: 100%;
+}
