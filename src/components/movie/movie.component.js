@@ -2,15 +2,15 @@ import React from 'react';
 import './movie.component.css';
 import dayjs from "dayjs";
 
-export const Movie = ({movie}) => {
+export const Movie = ({item}) => {
     return(
-        <div className='movie' key={movie.id}>          
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt='movie' width='120px'/>
+        <div className='movie' key={item.id}>          
+            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt='movie' width='120px'/>
             <div className='movie-info'>
                 <br/>
-                <b>{movie.title} </b>
+                <b>{item.title || item.name} </b>
                 <br/>
-                {dayjs(`${movie.release_date }`).format('MMM D, YYYY')}
+                {dayjs(`${item.release_date || item.first_air_date}`).format('MMM D, YYYY')}
             </div>
         </div>
     );

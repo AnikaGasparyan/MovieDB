@@ -6,7 +6,7 @@ class MovieService {
         return response.json();
     }
     async getSectionMovieList(type){
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${type}?api_key=${apiKey}&language=en-US&page=1`)
+        const response = await fetch(`https://api.themoviedb.org/3${type}?api_key=${apiKey}&language=en-US&page=1`)
         return response.json();
     }
 }

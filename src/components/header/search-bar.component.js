@@ -32,14 +32,9 @@ export const SearchBar = () => {
         if(search.value===''){
             setError('Select category!');
             setShouldRedirct(false);
-        }else if(search.query.trim().length === 0){
-            setError('Search query is requiered!');
-            setShouldRedirct(false);
         }
-        else {
-            setError('');
-            setShouldRedirct(true);
-        }
+        setError('');
+        setShouldRedirct(true);
     };
 
     return(

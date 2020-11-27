@@ -4,9 +4,30 @@
 }
 .preview-text{
     padding-top: 20px;
-    /* color: #db2619d8; */
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 100px;
     margin-top: 20px;
+}
+.tabs {
+    float: right;
+    position: relative;
+}
+.tab {
+    position: absolute;
+    right: 870px;
+    bottom: 0;
+    height: 35px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    cursor: pointer;
+}
+.tab-movie{
+    right: 960px;
+}
+.selected {
+    background-color: rgb(173, 121, 9) ;
 }

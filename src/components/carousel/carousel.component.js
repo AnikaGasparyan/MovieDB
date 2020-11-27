@@ -2,13 +2,15 @@ import React from 'react';
 import './carousel.component.css';
 import { Movie } from "../movie/movie.component";
 
-export const Carousel = ({sectionMovies}) => {
+
+export const Carousel = ({items}) => {
     return(
-        <div className='carousel'>   
-        {sectionMovies.results!==undefined && sectionMovies.results.map((movie)=>{
-            console.log(movie)
-            return  <Movie movie={movie} key={movie.id}/>                   
+        <div className='carousel'>  
+        {items.results && items.results.map((item)=>{
+            console.log(item)
+            return  <Movie item={item} key={item.id}/>                   
         })}
+        
         </div>
     );
 }
