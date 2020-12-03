@@ -1,5 +1,6 @@
 .header {
     display: flex;
+    top:0;
     justify-content: space-around;
     width: 100%;
     position: fixed;
@@ -48,6 +49,8 @@ li a {
     border: 1px solid grey;
     margin-right: 5px;
     color: grey; 
+    cursor: pointer;
+
 }
 .error {
     font-size: 25px;

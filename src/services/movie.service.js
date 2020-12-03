@@ -9,5 +9,13 @@ class MovieService {
         const response = await fetch(`https://api.themoviedb.org/3${type}?api_key=${apiKey}&language=en-US&page=1`)
         return response.json();
     }
+    async getTrendingList(mediaType) {
+        const response = await fetch(`https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=${apiKey}`)
+        return response.json();
+    }
+    async getVideo(id) {
+        const response = await fetch (`www.youtube.com/embed/${id}`)
+        return response.json();
+    }
 }
 export const movieService = new MovieService();

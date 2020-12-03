@@ -29,5 +29,6 @@
     right: 960px;
 }
 .selected {
-    background-color: rgb(173, 121, 9) ;
+    background-color: rgb(17, 60, 83);
+    color: white;
 }

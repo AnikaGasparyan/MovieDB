@@ -21,6 +21,7 @@ export const Header = () => {
                 <Link to='/' >  <img src='./assets/logo.png' alt='logo' width='60px' /> </Link>     
                 </div>
                 <ul className='nav-bar'>
+                    <li><Link to="/"> Home</Link></li>
                     <li><Link to="/movie"> Movies</Link></li>
                     <li><Link to="/tv-show">TV Shows</Link></li> 
                     <li><Link to='/people'>People</Link></li>

@@ -13,11 +13,11 @@ export const MovieCard = ({movie}) => {
                 alt="movie" width='100px' 
                 />
                 <div className='title'>
-                    <h3>{movie.title || movie.name}</h3>
+                    <h2>{movie.title || movie.name}</h2>
                     <p>{movie.known_for_department || dayjs(`${movie.release_date || movie.first_air_date}`).format('MMM D, YYYY')}</p>
                 </div>
                 <p className='overview'>
-                    {movie.overview ||`Popularity ${movie.popularity<10? Math.floor(movie.popularity) : 10} /10`}
+                    { movie.overview ||`Popularity ${movie.popularity<10? Math.floor(movie.popularity) : 10} /10`}
                 </p>
                 
             </div>

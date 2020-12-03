@@ -4,15 +4,14 @@ export const QueryContext = createContext();
 
 export const QueryProvider = ({children}) => {
     const [query, setQuery] = useState('');
-    const [value, setValue] = useState('');
-    
+    const [value, setValue] = useState('');    
     return (
        < QueryContext.Provider
         value ={{
             query,
             setQuery,
             value,
-            setValue
+            setValue,
         }}
        >
            {children}

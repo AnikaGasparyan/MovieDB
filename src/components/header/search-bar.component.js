@@ -13,11 +13,20 @@ export const SearchBar = () => {
 
     useEffect(()=>{
         search.setQuery(debouncedQuery);
+
+        
     },[debouncedQuery, search]);
+
 
     const handleQueryChange = (event) => {
         const value = event.target.value;
         setQuery(value);
+        setShouldRedirct(false);
+        setError('')
+        if(search.value===''){
+            setError('Select category!');
+            setShouldRedirct(false);
+        }
     };
     const handleValueChange = (event) => {
         setShouldRedirct(false);
@@ -26,20 +35,17 @@ export const SearchBar = () => {
             setError('Search query is requiered!');
             setShouldRedirct(false);
         }
+        
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(search.value===''){
-            setError('Select category!');
-            setShouldRedirct(false);
-        }
         setError('');
         setShouldRedirct(true);
     };
 
     return(
         <>
-            {shouldRedirect && <Redirect  to='/search-result'/>}
+            {shouldRedirect && <Redirect  to={`/search-result/?query=${query}`}/>}
             <form onSubmit={handleSubmit}>
                 <div className='input-dropdown'> 
                     <select className='select' onChange={handleValueChange}>
