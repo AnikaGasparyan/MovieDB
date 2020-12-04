@@ -8,7 +8,7 @@ export const Carousel = ({items}) => {
     return(
     
         <div className='carousel'>  
-        {items.results && items.results.map((item)=>{
+        {items && items.results && items.results.map((item)=>{
             return  <Card item={item} key={item.id} width={width}/>                   
         })}
         

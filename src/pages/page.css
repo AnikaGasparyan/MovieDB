@@ -28,3 +28,15 @@
 h1 {
     text-align: center;
 }
+.btn-group {
+    margin: 25px 0 25px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.btn {
+    background-color: transparent;
+    border: transparent;
+    font-size: 23px;
+    cursor: pointer;
+    color: white;
+}

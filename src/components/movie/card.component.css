@@ -1,14 +1,12 @@
-.movie{
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom:20px ;
+.card{
+    margin: 20px 0 20px 20px ;
     width: 200px;
     background-color: white;
     color: black;
     border-radius: 10px;
     box-shadow: 4px 4px rgba(225, 225, 225, 0.2);
 }
-.movie-info {
+.card-info {
     padding: 0 5px 5px 5px;
     display: flex;
     flex-direction: column;
@@ -16,7 +14,7 @@
     align-items: center;
     text-align: center;
 }
-.movie-info b {
+.card-info b {
     font-size: 20px;
     color: rgb(17, 60, 83);
 }
@@ -25,6 +23,6 @@
     font-weight: 600;
     overflow-wrap: anywhere;
 }
-.movie img{
+.card img{
     border-radius: 10px 10px 0 0;
 }
