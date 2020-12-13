@@ -1,11 +1,11 @@
 import { movieService } from "../services/movie.service";
 import {useEffect, useState} from 'react';
 
-export const useVideo = (id) => {
+export const useVideoKey = (url) => {
     const [videoUrl, setVideoUrl] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=>{
-        movieService.getVideo(id).then((data)=>{
+        movieService.getVideoKey(url).then((data)=>{
             setVideoUrl(data);
             setIsLoading(false);
         }).catch((e)=>{
@@ -15,6 +15,6 @@ export const useVideo = (id) => {
         return ()=>{
            setVideoUrl('')
         }
-    },[id]);
+    },[url]);
     return [videoUrl, isLoading];
 }

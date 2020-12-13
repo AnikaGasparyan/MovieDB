@@ -7,14 +7,17 @@ import { LoadingScreen } from '../loader/loader.component';
 export const Section = ({movieUrl,tvUrl,title}) => {
     const [movies,movieLoading] = useMoviesList(movieUrl);
     const [shows,showsLoading] = useMoviesList(tvUrl);
-
     const [isMovieActive, setIsMovieActive] = useState(true);
+    const [type, setType] = useState('movie')
 
     const handleTvTabClick = () => {
         setIsMovieActive(false);
+        setType('tv');
+        
     }
     const handleMovieTabClick = () => {
         setIsMovieActive(true);
+        setType('movie')
     }
     return(  
         <> 
@@ -26,7 +29,7 @@ export const Section = ({movieUrl,tvUrl,title}) => {
                 <button className={`tab ${!isMovieActive ? 'selected' : ''} `} onClick={handleTvTabClick}>TV Shows</button>
 
             </div>
-            <Carousel items={isMovieActive ? movies : shows} />
+            <Carousel items={isMovieActive ? movies : shows } mediaType={type}  />
             </div>  }
         </>
           

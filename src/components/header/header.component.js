@@ -12,6 +12,7 @@ import {
     Link
   } from "react-router-dom";
 import { SearchResult } from '../../pages/search-result.page';
+import { DetailsPage } from '../../pages/details.page';
 
 export const Header = () => {
     return (
@@ -33,6 +34,7 @@ export const Header = () => {
                     <Route path='/tv-show' component={TvShows}/>
                     <Route path='/people' component={People}/>
                     <Route path='/search-result' component={SearchResult} />
+                    <Route path='/details/:mediaType/:id' component={DetailsPage} />
                     <Route path='/' component={HomePage}/>
                     
                 </Switch>  

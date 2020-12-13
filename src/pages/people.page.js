@@ -18,7 +18,7 @@ export const People = () => {
                 <h1> Welcome to this week's trending people page</h1>
                     <div className='trending-items'>
                         {trending.results && trending.results.map((item)=>{
-                            return  <Card item={item} key={item.id} width={width}/>                   
+                            return  <Card item={item} key={item.id} width={width} mediaType={mediaType}/>                   
                         })}
                     </div> 
             </div>
