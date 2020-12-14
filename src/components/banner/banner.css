@@ -1,6 +1,6 @@
 .banner {
     height: 550px;
-    background-color: rgba(17, 60, 83, 0.459);
+    background-image: linear-gradient(to left, rgba(196, 13, 13, 0.658), rgba(17, 60, 83, 0.459));
     width: 100%;   
 }
 
@@ -8,12 +8,27 @@
 .play {
     cursor: pointer;
     position: absolute;
-    right: 40%;
-    top: 150px;
+    right: 44%;
+    top: 190px;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
-    width: 220px;
+    width: 170px;
 }
+.play-circle {
+    border: 2px solid rgba(255, 255, 255, 0.562);
+    border-radius: 50%;
+    width: 348px;
+    clip-path: none;
+    height: 343px;
+    top: 142px;
+    right: 538px;
 
+    
+}
+.trailer {
+    clip-path: none;
+    top: 75px;
+    right: 620px;
+}
 .close{
     cursor: pointer;
     position: fixed;
@@ -47,11 +62,16 @@
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
     position: absolute;
-    top: 150px;
+    top: 205px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 10px 10px 10px;
-    width: 375px;
+    width: 270px;
+}
+.rating{
+    justify-content: center;
+    right: 0;
+    top: 220px;
 }

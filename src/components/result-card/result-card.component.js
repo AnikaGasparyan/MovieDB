@@ -15,7 +15,6 @@ export const MovieCard = ({movie}) => {
         setShouldRedirect(true);
         card.setId(movie.id);
     };
-    console.log(movie)
 
     
     return(

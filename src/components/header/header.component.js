@@ -33,7 +33,7 @@ export const Header = () => {
                     <Route path='/movie' component={Movies}/>
                     <Route path='/tv-show' component={TvShows}/>
                     <Route path='/people' component={People}/>
-                    <Route path='/search-result' component={SearchResult} />
+                    <Route path='/:results' exact component={SearchResult} />
                     <Route path='/details/:mediaType/:id' component={DetailsPage} />
                     <Route path='/' component={HomePage}/>
                     

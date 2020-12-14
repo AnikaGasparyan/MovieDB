@@ -6,13 +6,11 @@ import { useSearchResults } from '../hooks/use-search-results.hook';
 import { LoadingScreen } from "../components/loader/loader.component";
 
 export const SearchResult = (props) => {
-    console.log(props);
     
 
     const query = useContext(QueryContext);
     const searchQuery = query.query;
     props.location.search = searchQuery
-    // props.location.search = searchQuery;
     const [movies, resultsLoading] = useSearchResults(searchQuery, query.value, query.page);
 
     props.match.params = props.location.search;
@@ -35,7 +33,6 @@ export const SearchResult = (props) => {
                     </div>
                     <div className='search-results-container'>
                         {movies.results && movies.results.map((movie) => {
-                            console.log(movies)
                             return <MovieCard movie={movie} key={movie.id} />
                         }
                         )}

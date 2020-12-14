@@ -6,7 +6,6 @@ import { VideoContext } from '../../conexts/video-state.context';
 
 export const Card = ({item, width, mediaType}) => {
     const card = useContext(VideoContext); 
-    card.setMedia(mediaType);  
     const peopleKnownFor = item.known_for && item.known_for.map((movie)=>{
         return movie.title 
     });
