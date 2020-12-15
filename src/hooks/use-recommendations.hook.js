@@ -2,7 +2,7 @@ import { movieService } from "../services/movie.service";
 import {useEffect, useState} from 'react';
 
 export const useRecommendations = (url) => {
-    const [recomList, setRecomList] = useState([]);
+    const [recomList, setRecomList] = useState({});
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(()=>{
@@ -11,14 +11,14 @@ export const useRecommendations = (url) => {
             setIsLoading(false)
 
         }).catch((e)=>{
-            setRecomList([]);
+            setRecomList({});
             setIsLoading(true)
 
         })
-        return ()=>{
-            setRecomList([]);
-
-        }
     },[url]);
-    return[ recomList, isLoading];
+
+    return {
+        recomList,
+        isLoading
+    };
 }
