@@ -19,12 +19,12 @@ export const Header = () => {
         <Router>
             <div className='header'>
                 <div className='logo'>
-                <Link to='/' >  <img src='./assets/logo.png' alt='logo' width='60px' /> </Link>     
+                <Link to='/' >  <img src='./assets/logo.png' alt='logo' width='60px' /> </Link>
                 </div>
                 <ul className='nav-bar'>
                     <li><Link to="/"> Home</Link></li>
                     <li><Link to="/movie"> Movies</Link></li>
-                    <li><Link to="/tv-show">TV Shows</Link></li> 
+                    <li><Link to="/tv-show">TV Shows</Link></li>
                     <li><Link to='/people'>People</Link></li>
                 </ul>
                 <SearchBar />
@@ -33,11 +33,11 @@ export const Header = () => {
                     <Route path='/movie' component={Movies}/>
                     <Route path='/tv-show' component={TvShows}/>
                     <Route path='/people' component={People}/>
-                    <Route path='/:results' exact component={SearchResult} />
+                    <Route path='/search-result' component={SearchResult} />
                     <Route path='/details/:mediaType/:id' component={DetailsPage} />
                     <Route path='/' component={HomePage}/>
-                    
-                </Switch>  
+
+                </Switch>
         </Router>
     );
 }
