@@ -2,23 +2,25 @@ import { movieService } from "../services/movie.service";
 import {useEffect, useState} from 'react';
 
 export const useMoviesList = (url) => {
-    const [moviesList, setMoviesList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [initialListState, setInitialListState] = useState({
+        moviesList: [],
+        isLoading: true
+    })
 
     useEffect(()=>{
         movieService.getSectionMovieList(url).then((data)=>{
-            setMoviesList(data);
-            setIsLoading(false)
-
+            setInitialListState({
+                moviesList: data, 
+                isLoading: false
+            });
         }).catch((e)=>{
-            setMoviesList([]);
-            setIsLoading(true)
-
+            setInitialListState({
+                moviesList: [], 
+                isLoading: true
+            });
         })
-        return ()=>{
-            setMoviesList([]);
-
-        }
     },[url]);
-    return[ moviesList, isLoading];
+
+    return initialListState
+    // return initialListState;
 }

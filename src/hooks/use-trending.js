@@ -2,20 +2,28 @@ import { movieService } from "../services/movie.service";
 import {useEffect, useState} from 'react';
 
 export const useTrending = (mediaType) => {
-    const [trendingList, setTrendingList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+
+    const [initialTrendingList, setInitialTrendingList] = useState({
+        trendingList: [],
+        isLoading: true
+
+    })
 
     useEffect(()=>{
         movieService.getTrendingList(mediaType).then((data)=>{
-            setTrendingList(data);
-            setIsLoading(false);
+            setInitialTrendingList({
+                trendingList: data,
+                isLoading: false
+            })
+            
         }).catch((e)=>{
-            setTrendingList([]);
-            setIsLoading(true);
+            setInitialTrendingList({
+                trendingList: [],
+                isLoading: true
+            })
+            
+           
         })
-        return ()=>{
-            setTrendingList([]);
-        }
     },[mediaType]);
-    return [trendingList, isLoading];
+    return initialTrendingList;
 }

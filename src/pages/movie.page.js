@@ -11,8 +11,8 @@ import {useVideoKey} from '../hooks/use-video-key.hook'
 export const Movies = () => {
     const videoState = useContext(VideoContext);
     const mediaType = 'movie'
-    const [trending, trendingLoading] = useTrending(mediaType);
-    const details = useDetails('24428', mediaType);    
+    const {trendingList: trending, isLoading: trendingLoading} = useTrending(mediaType);
+    const {details} = useDetails('24428', mediaType);    
     const url = `${mediaType}/24428`;
     const getKey = useVideoKey(url);
     const width = '200px';
@@ -20,7 +20,7 @@ export const Movies = () => {
         <>
             {trendingLoading ? <LoadingScreen /> :
                 <div >
-                    <Banner details={details[0]} videoId={getKey} />
+                    <Banner details={details} videoId={getKey} />
 
                     <div className={videoState.isClicked ? 'page-overlay' : ''}>
 

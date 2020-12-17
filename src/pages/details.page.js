@@ -14,12 +14,15 @@ export const DetailsPage = ({ match }) => {
 
     const mediaUrl = `${mediaType}/${id}/similar`;
     const peopleUrl = `${mediaType}/${id}/tagged_images`;
+    
     const knownFor = useRecommendations(peopleUrl);
     const similar = useRecommendations(mediaUrl);
 
-    const [details, loadingDetails] = useDetails(id, mediaType);
+    const {details, loadingDetails} = useDetails(id, mediaType);
+
     const runtimeHoures = Math.floor(details.runtime / 60);
     const runtimeMinutes = Math.floor(60 * (details.runtime / 60 - runtimeHoures));
+   
     let popularity = details.popularity;
     if (popularity >= 10) {
         popularity = 10;
@@ -88,7 +91,7 @@ export const DetailsPage = ({ match }) => {
                 </div>
                 <div>
                     <h1>You might be interested</h1>
-                    <Carousel items={ mediaType==='person' ? knownFor[0] : similar[0]} mediaType={mediaType} />
+                    <Carousel items={ mediaType==='person' ? knownFor : similar} mediaType={mediaType} />
                 </div>
             
             </>

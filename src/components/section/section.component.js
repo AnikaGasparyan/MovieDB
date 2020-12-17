@@ -5,20 +5,21 @@ import { useMoviesList } from '../../hooks/use-movie-list.hook';
 import { LoadingScreen } from '../loader/loader.component';
 
 export const Section = ({movieUrl,tvUrl,title}) => {
-    const [movies,movieLoading] = useMoviesList(movieUrl);
-    const [shows,showsLoading] = useMoviesList(tvUrl);
+    const {isLoading: movieLoading, moviesList: movies} = useMoviesList(movieUrl);
+    const {moviesList :shows, isLoading:showsLoading} = useMoviesList(tvUrl);
+
     const [isMovieActive, setIsMovieActive] = useState(true);
-    const [type, setType] = useState('movie')
+    const [type, setType] = useState('movie');
 
     const handleTvTabClick = () => {
         setIsMovieActive(false);
         setType('tv');
-        
-    }
+    };
     const handleMovieTabClick = () => {
         setIsMovieActive(true);
         setType('movie')
-    }
+    };
+
     return(  
         <> 
             {movieLoading || showsLoading ? (<LoadingScreen />) 
