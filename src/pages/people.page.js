@@ -2,7 +2,7 @@ import React from 'react';
 import "./page.css";
 
 import { useTrending } from "../hooks/use-trending";
-import { Card } from "../components/movie/card.component";
+import { PersonCard } from "../components/cards/PersonCardComponent";
 import { LoadingScreen } from '../components/loader/loader.component';
 
 export const People = () => {
@@ -18,7 +18,7 @@ export const People = () => {
                 <h1> Welcome to this week's trending people page</h1>
                     <div className='trending-items'>
                         {trending.results && trending.results.map((item)=>{
-                            return  <Card item={item} key={item.id} width={width} mediaType={mediaType}/>                   
+                            return  <PersonCard item={item} key={item.id} width={width} mediaType={mediaType}/>                   
                         })}
                     </div> 
             </div>

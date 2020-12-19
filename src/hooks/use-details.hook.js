@@ -1,12 +1,25 @@
 import { movieService } from "../services/movie.service";
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 
 export const useDetails = (id, mediaType) => {
 
+    
+    const initialDetails = useMemo(()=>{
+        return {
+            profile_path :'',
+            biography :'',
+            birthday: '',
+            name: '',
+            known_for_department: '',
+            popularity: ''
+        }
+    },[]);
+
     const [initialState, setInitialState] = useState({
-        details: [],
+        details: initialDetails ,
         isLoading: true
     });
+
 
     useEffect(()=>{
         movieService.getDetails(id, mediaType).then((data)=>{
@@ -15,13 +28,16 @@ export const useDetails = (id, mediaType) => {
                 isLoading: false
             });
         }).catch((e)=>{
+
             setInitialState({
-                details: [], 
+                details: initialDetails, 
                 isLoading: true
             });
-        })
 
-    }, [id, mediaType]);
-    
-     return initialState;
+    }, [id, mediaType, initialDetails]);
+
+     return {details, isLoading}
+
 }
+    
+    

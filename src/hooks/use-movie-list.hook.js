@@ -21,6 +21,6 @@ export const useMoviesList = (url) => {
         })
     },[url]);
 
+
     return initialListState
-    // return initialListState;
 }
