@@ -20,5 +20,5 @@ export const useMoviesList = (url) => {
 
         }
     },[url]);
-    return[ moviesList, isLoading];
+    return {moviesList, isLoading};
 }

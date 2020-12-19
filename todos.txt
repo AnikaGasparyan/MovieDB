@@ -1,4 +1,4 @@
-1. in all hooks return object instead of array
-2. fix Card component for all pages
-3. remove shouldRedirect logic and use Link or history.push instead
-4. separate movie and person details page
+1. in all hooks return object instead of array +
+2. fix Card component for all pages +
+3. remove shouldRedirect logic and use Link or history.push instead +
+4. separate movie and person details page+

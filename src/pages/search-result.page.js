@@ -23,6 +23,7 @@ export const SearchResult = props => {
     history.push(`/search-result?${queryString}`);
   };
 
+  
   const handleNextPageClick = () => {
     const numPage = Number(page);
     if (numPage < movies.total_pages) {

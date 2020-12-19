@@ -11,42 +11,31 @@ import { useVideoKey } from "../hooks/use-video-key.hook";
 export const DetailsPage = ({ match }) => {
   const mediaType = match.params.mediaType;
   const id = match.params.id;
-
+  console.log(match)
   const mediaUrl = `${mediaType}/${id}/similar`;
-  const peopleUrl = `${mediaType}/${id}/combined_credits`;
-  const {
-    recomList: { cast = [], crew = [] },
-  } = useRecommendations(peopleUrl);
 
   const {
     recomList: { results: movieRecommendations = [] },
   } = useRecommendations(mediaUrl);
 
-  const [details, loadingDetails] = useDetails(id, mediaType);
+  const {details, isLoading: loadingDetails} = useDetails(id, mediaType);
 
   const {
-    profile_path,
     runtime,
-    biography,
     poster_path,
     genres = [],
     release_date,
-    birthday,
     overview,
     tagline,
     production_countries,
-    name,
     title,
-    known_for_department,
     vote_average,
+    name
   } = details;
 
   const runtimeHoures = Math.floor(runtime / 60);
   const runtimeMinutes = Math.floor(60 * (runtime / 60 - runtimeHoures));
-  let popularity = details.popularity;
-  if (popularity >= 10) {
-    popularity = 10;
-  }
+  
   const url = `${mediaType}/${id}`;
   const getKey = useVideoKey(url);
 
@@ -57,22 +46,13 @@ export const DetailsPage = ({ match }) => {
     .join(" | ");
 
   const carouselData = useMemo(() => {
-    if (mediaType === "person") {
-      return [...cast, ...crew].map(movie => {
-        return {
-          ...movie,
-          mediaType: movie.media_type,
-        };
-      });
-    }
-
     return movieRecommendations.map(movie => {
       return {
         ...movie,
         mediaType: mediaType,
       };
     });
-  }, [cast, crew, mediaType, movieRecommendations]);
+  }, [mediaType, movieRecommendations]);
 
   return (
     <>
@@ -90,11 +70,9 @@ export const DetailsPage = ({ match }) => {
           )}
 
           <div className="details-container">
-            <img src={`https://image.tmdb.org/t/p/w500/${poster_path || profile_path}`} alt="poster" width="250px" />
+            <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="poster" width="250px" />
             <div className="detailed-card">
-              <h2>{`${title || name} (${
-                release_date ? dayjs(release_date).format("YYYY") : dayjs(birthday).format("DD, MMM YYYY")
-              })`}</h2>
+              <h2>{`${title || name} (${dayjs(release_date).format("YYYY")})`}</h2>
 
               <div className="geners">{genresText}</div>
 
@@ -107,17 +85,15 @@ export const DetailsPage = ({ match }) => {
 
               {runtime && runtime !== 0 && <div className="runtime">{`${runtimeHoures}h${runtimeMinutes}m`}</div>}
 
-              {known_for_department && <div>{known_for_department}</div>}
-
-              <h2>{vote_average ? vote_average + "/10" : popularity + "/10"}</h2>
+              <h2>{vote_average + "/10"}</h2>
 
               {tagline && <div className="tagline">{tagline}</div>}
 
-              {(overview || biography) && (
+              {(overview) && (
                 <div className="detail-overview">
-                  <span> {overview ? "OVERVIEW" : "BIOGRAPHY"}</span>
+                  <span> {"BIOGRAPHY"}</span>
                   <br />
-                  {overview || biography}
+                  {overview}
                 </div>
               )}
             </div>

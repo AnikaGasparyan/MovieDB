@@ -6,6 +6,7 @@
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 4px 4px rgba(225, 225, 225, 0.2);
+    text-decoration: none;
 }
 
 .card-info {

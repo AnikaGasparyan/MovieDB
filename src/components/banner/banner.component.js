@@ -3,6 +3,13 @@ import { VideoContext } from '../../conexts/video-state.context';
 import "./banner.css";
 
 export const Banner = ({details, videoId}) =>{
+    const {
+        poster_path,
+        title,
+        name,
+        vote_average,
+        overview
+    } = details;
     const videoState = useContext(VideoContext);    
     const handleToggleClick = () =>{
         videoState.setIsClicked(!videoState.isClicked);
@@ -12,14 +19,14 @@ export const Banner = ({details, videoId}) =>{
             <div className={videoState.isClicked? 'banner-overlay' : ''}>
                 <h1 className='play trailer'>Play trailer</h1>
                 <div className='play play-circle'></div>
-                <img className='play' src={`https://image.tmdb.org/t/p/w500/${details.poster_path}` } alt='baner'  onClick={handleToggleClick}/>
+                <img className='play' src={`https://image.tmdb.org/t/p/w500/${poster_path}` } alt='baner'  onClick={handleToggleClick}/>
                 <div className='details'>
-                    <h1>{details.title || details.name}</h1>
-                    <p>{details.overview}</p>
+                    <h1>{title || name}</h1>
+                    <p>{overview}</p>
                 </div>
                 <div className='details rating'>
                     <h1>Rating</h1>
-                   <h1>{Math.floor(details.vote_average)+'/10'}</h1>  
+                   <h1>{Math.floor(vote_average)+'/10'}</h1>  
                 </div>
             </div>
             {videoState.isClicked && 
