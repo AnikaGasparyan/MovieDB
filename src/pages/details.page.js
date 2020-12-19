@@ -14,11 +14,13 @@ export const DetailsPage = ({ match }) => {
   console.log(match)
   const mediaUrl = `${mediaType}/${id}/similar`;
 
+
   const {
     recomList: { results: movieRecommendations = [] },
   } = useRecommendations(mediaUrl);
 
   const {details, isLoading: loadingDetails} = useDetails(id, mediaType);
+
 
   const {
     runtime,
@@ -102,6 +104,7 @@ export const DetailsPage = ({ match }) => {
             <h1>You might be interested</h1>
             <Carousel items={carouselData} mediaType={mediaType} />
           </div>
+
         </>
       )}
     </>

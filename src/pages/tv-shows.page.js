@@ -9,11 +9,12 @@ import {useVideoKey} from '../hooks/use-video-key.hook'
 
 export const TvShows = () => {
     const mediaType = 'tv'
-    const [trending, trendingLoading] = useTrending(mediaType);
+
+    const {trendingList: trending, isLoading: trendingLoading} = useTrending(mediaType);
+
     const {details} = useDetails('87739', mediaType);
     const url = `${mediaType}/87739`;
     const getKey = useVideoKey(url);
-
     const width = '200px';
 
     return (

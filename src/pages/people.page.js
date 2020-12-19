@@ -7,12 +7,12 @@ import { LoadingScreen } from '../components/loader/loader.component';
 
 export const People = () => {
     const mediaType = 'person'
-    const [trending, loadinTrending] = useTrending(mediaType);
+    const {trendingList: trending, isLoading: loadingTrending} = useTrending(mediaType);
     const width = '200px'
 
     return(
         <>
-            {loadinTrending? <LoadingScreen /> : 
+            {loadingTrending? <LoadingScreen /> : 
         
             <div className='people-page'>
                 <h1> Welcome to this week's trending people page</h1>

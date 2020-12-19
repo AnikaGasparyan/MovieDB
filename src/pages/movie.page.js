@@ -10,8 +10,10 @@ import {useVideoKey} from '../hooks/use-video-key.hook'
 
 export const Movies = () => {
     const videoState = useContext(VideoContext);
-    const mediaType = 'movie';
-    const [trending, trendingLoading] = useTrending(mediaType);
+
+    const mediaType = 'movie'
+    const {trendingList: trending, isLoading: trendingLoading} = useTrending(mediaType);
+
     const {details} = useDetails('24428', mediaType);    
     const url = `${mediaType}/24428`;
     const getKey = useVideoKey(url);

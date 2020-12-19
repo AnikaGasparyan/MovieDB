@@ -5,6 +5,7 @@ import { useMoviesList } from '../../hooks/use-movie-list.hook';
 import { LoadingScreen } from '../loader/loader.component';
 
 export const Section = ({movieUrl,tvUrl,title}) => {
+
     const {
         moviesList: {results: movies = []},
         isLoading: movieLoading} = useMoviesList(movieUrl);
@@ -13,17 +14,18 @@ export const Section = ({movieUrl,tvUrl,title}) => {
         isLoading: showsLoading} = useMoviesList(tvUrl);
 
 
+
     const [isMovieActive, setIsMovieActive] = useState(true);
     const [type, setType] = useState('movie');
 
     const handleTvTabClick = () => {
         setIsMovieActive(false);
         setType('tv');
-        
-    }
+    };
     const handleMovieTabClick = () => {
         setIsMovieActive(true);
         setType('movie')
+
     }
 
 
@@ -45,8 +47,6 @@ export const Section = ({movieUrl,tvUrl,title}) => {
     })
 
 }, [movies, shows, type]); 
-
-console.log(carouselData)
 
     return(  
         <> 

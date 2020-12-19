@@ -2,6 +2,7 @@ import { movieService } from "../services/movie.service";
 import {useEffect, useMemo, useState} from 'react';
 
 export const useDetails = (id, mediaType) => {
+
     
     const initialDetails = useMemo(()=>{
         return {
@@ -13,20 +14,30 @@ export const useDetails = (id, mediaType) => {
             popularity: ''
         }
     },[]);
-    const [details,setDetails] = useState(initialDetails);
-    const [isLoading, setIsLoading] = useState(true);
+
+    const [initialState, setInitialState] = useState({
+        details: initialDetails ,
+        isLoading: true
+    });
+
 
     useEffect(()=>{
         movieService.getDetails(id, mediaType).then((data)=>{
-            setDetails(data);
-            setIsLoading(false);
+            setInitialState({
+                details: data, 
+                isLoading: false
+            });
         }).catch((e)=>{
-            setDetails(initialDetails);
-            setIsLoading(true);
-        });
+
+            setInitialState({
+                details: initialDetails, 
+                isLoading: true
+            });
 
     }, [id, mediaType, initialDetails]);
 
      return {details, isLoading}
 
 }
+    
+    

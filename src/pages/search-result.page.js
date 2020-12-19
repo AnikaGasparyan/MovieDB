@@ -12,7 +12,7 @@ export const SearchResult = props => {
 
   const { query, value, page } = qs.parse(location.search);
 
-  const [movies, resultsLoading] = useSearchResults(query, value, page);
+  const {movies, resultsLoading} = useSearchResults(query, value, page);
 
   const navigateToPage = page => {
     const queryString = qs.stringify({
