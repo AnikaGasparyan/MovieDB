@@ -51,7 +51,7 @@ export const SearchBar = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit}>
         <div className="input-dropdown">
           <select className="select" value={category} onChange={handleCategoryChange}>
             <option value="">Category</option>
