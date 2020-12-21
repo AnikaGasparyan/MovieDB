@@ -26,9 +26,5 @@ export const useSearchResults = (query, value, page) => {
       });
   }, [query, value, page]);
 
-  // return {
-  //   movies: initalQuery.movies,
-  //   resultsLoading: initalQuery.isLoading
-  // };
   return initalQuery;
 };

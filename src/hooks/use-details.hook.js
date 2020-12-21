@@ -16,10 +16,9 @@ export const useDetails = (id, mediaType) => {
     },[]);
 
     const [initialState, setInitialState] = useState({
-        details: initialDetails ,
+        details: initialDetails,
         isLoading: true
     });
-
 
     useEffect(()=>{
         movieService.getDetails(id, mediaType).then((data)=>{
@@ -28,16 +27,17 @@ export const useDetails = (id, mediaType) => {
                 isLoading: false
             });
         }).catch((e)=>{
-
             setInitialState({
                 details: initialDetails, 
                 isLoading: true
             });
+        })
+        }, [id, mediaType, initialDetails]);
 
-    }, [id, mediaType, initialDetails]);
-
-     return {details, isLoading}
-
+    
+    return initialState
 }
+
+
     
     

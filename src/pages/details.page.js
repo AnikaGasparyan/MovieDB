@@ -11,17 +11,11 @@ import { useVideoKey } from "../hooks/use-video-key.hook";
 export const DetailsPage = ({ match }) => {
   const mediaType = match.params.mediaType;
   const id = match.params.id;
-  console.log(match)
   const mediaUrl = `${mediaType}/${id}/similar`;
-
-
-  const {
-    recomList: { results: movieRecommendations = [] },
-  } = useRecommendations(mediaUrl);
+  const { recomList } = useRecommendations(mediaUrl);
+  const {results:movieRecommendations = []} = recomList;
 
   const {details, isLoading: loadingDetails} = useDetails(id, mediaType);
-
-
   const {
     runtime,
     poster_path,
