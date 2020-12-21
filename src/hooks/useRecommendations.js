@@ -1,4 +1,4 @@
-import { movieService } from "../services/movie.service";
+import { movieService } from "../services/MovieService";
 import {useEffect, useState} from 'react';
 
 export const useRecommendations = (url) => {
@@ -7,7 +7,6 @@ export const useRecommendations = (url) => {
     
     useEffect(()=>{
         movieService.getRecommendations(url).then((data)=>{
-            console.log(data);
             setRecomList(data);
         }).catch((e)=>{
             setRecomList([]);

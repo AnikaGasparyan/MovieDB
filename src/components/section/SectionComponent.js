@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import './section.component.css'
-import { Carousel } from '../carousel/carousel.component';
-import { useMoviesList } from '../../hooks/use-movie-list.hook';
-import { LoadingScreen } from '../loader/loader.component';
+import { Carousel } from '../carousel/CarouselComponent';
+import { useMoviesList } from '../../hooks/useMovieList';
+import { LoadingScreen } from '../loader/LoaderComponent';
 
 export const Section = ({movieUrl,tvUrl,title}) => {
 

@@ -1,11 +1,11 @@
 import React  from 'react';
-import {Section} from '../components/section/section.component';
+import {Section} from '../components/section/SectionComponent';
 
 export const HomePage = () => {
 
     return(
        
-        <div>
+        <div >
             <img src='./assets/rick-and-morty-banner.png' alt='bannaer' width='100%'/>
             <Section title="Now Playing"  movieUrl='/movie/now_playing' tvUrl="/tv/on_the_air" /> 
             <Section title="Popular"   movieUrl='/movie/popular' tvUrl="/tv/popular"  />

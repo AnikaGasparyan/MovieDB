@@ -1,4 +1,4 @@
-import { movieService } from "../services/movie.service";
+import { movieService } from "../services/MovieService";
 import {useEffect, useState} from 'react';
 
 export const useVideoKey = (url) => {
@@ -11,5 +11,5 @@ export const useVideoKey = (url) => {
         })
         
     },[url]);
-    return videoUrl;
+    return  videoUrl;
 }

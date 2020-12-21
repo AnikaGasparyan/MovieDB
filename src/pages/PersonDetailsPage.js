@@ -1,14 +1,13 @@
 import React, { useMemo } from 'react'
-import { LoadingScreen } from '../components/loader/loader.component';
-import { useDetails } from '../hooks/use-details.hook';
-import { Carousel } from "../components/carousel/carousel.component";
-import { useRecommendations } from '../hooks/use-recommendations.hook';
+import { LoadingScreen } from '../components/loader/LoaderComponent';
+import { useDetails } from '../hooks/useDetails';
+import { Carousel } from "../components/carousel/CarouselComponent";
+import { useRecommendations } from '../hooks/useRecommendations';
 import './page.css'
 import dayjs from "dayjs";
 
 
 export const PersonDetailsPage = ({ match }) => {
-    console.log(match)
     const id = match.params.id;
 
     const peopleUrl = `person/${id}/combined_credits`;
@@ -18,7 +17,6 @@ export const PersonDetailsPage = ({ match }) => {
       } = useRecommendations(peopleUrl);
 
     const {details, isLoading: loadingDetails} = useDetails(id,'person');
-    console.log(details)
 
     let {
         profile_path,
