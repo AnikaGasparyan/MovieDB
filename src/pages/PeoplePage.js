@@ -1,9 +1,9 @@
 import React from 'react';
 import "./page.css";
 
-import { useTrending } from "../hooks/use-trending";
+import { useTrending } from "../hooks/useTrending";
 import { PersonCard } from "../components/cards/PersonCardComponent";
-import { LoadingScreen } from '../components/loader/loader.component';
+import { LoadingScreen } from '../components/loader/LoaderComponent';
 
 export const People = () => {
     const mediaType = 'person'

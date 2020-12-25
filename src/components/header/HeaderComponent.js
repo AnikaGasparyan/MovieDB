@@ -1,18 +1,18 @@
 import React from 'react';
 import './header.component.css';
-import {Movies} from '../../pages/movie.page';
-import {People} from '../../pages/people.page';
-import {TvShows} from '../../pages/tv-shows.page';
-import {HomePage} from '../../pages/home.page';
-import {SearchBar} from './search-bar.component';
+import {Movies} from '../../pages/MoviePage';
+import {People} from '../../pages/PeoplePage';
+import {TvShows} from '../../pages/TvShowPage';
+import {HomePage} from '../../pages/HomePage';
+import {SearchBar} from './SearchBarComponent';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
-import { SearchResult } from '../../pages/search-result.page';
-import { DetailsPage } from '../../pages/details.page';
+import { SearchResult } from '../../pages/SearchResultsPage';
+import { DetailsPage } from '../../pages/DetailsPage';
 import { PersonDetailsPage } from "../../pages/PersonDetailsPage";
 
 export const Header = () => {

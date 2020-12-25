@@ -1,6 +1,6 @@
 import React from "react";
 import "./carousel.component.css";
-import { Card } from "../cards/card.component";
+import { Card } from "../cards/CardComponent";
 
 export const Carousel = ({ items = [] }) => {
   const width = "150px";
@@ -9,7 +9,6 @@ export const Carousel = ({ items = [] }) => {
   return (
     <div className="carousel">
       {items.map(item => {
-        console.log(item)
         return <Card item={item} key={item.id} width={width} />;
       })}
     </div>

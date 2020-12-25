@@ -1,8 +1,8 @@
 import React from "react";
 import "./page.css";
-import { MovieCard } from "../components/result-card/result-card.component";
-import { useSearchResults } from "../hooks/use-search-results.hook";
-import { LoadingScreen } from "../components/loader/loader.component";
+import { MovieCard } from "../components/result-card/ResultCardComponent";
+import { useSearchResults } from "../hooks/useSearchResults";
+import { LoadingScreen } from "../components/loader/LoaderComponent";
 import { useLocation, useHistory } from "react-router-dom";
 import qs from "query-string";
 

@@ -1,4 +1,4 @@
-import { movieService } from "../services/movie.service";
+import { movieService } from "../services/MovieService";
 import {useEffect, useState} from 'react';
 
 export const useMoviesList = (url) => {

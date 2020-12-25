@@ -1,11 +1,11 @@
 import React from 'react';
 import "./page.css";
-import { useTrending } from "../hooks/use-trending";
-import { Card } from "../components/cards/card.component";
-import { Banner } from '../components/banner/banner.component';
-import { LoadingScreen } from '../components/loader/loader.component';
-import { useDetails } from '../hooks/use-details.hook';
-import {useVideoKey} from '../hooks/use-video-key.hook'
+import { useTrending } from "../hooks/useTrending";
+import { Card } from "../components/cards/CardComponent";
+import { Banner } from '../components/banner/BannerComponent';
+import { LoadingScreen } from '../components/loader/LoaderComponent';
+import { useDetails } from '../hooks/useDetails';
+import {useVideoKey} from '../hooks/useVideoKey'
 
 export const TvShows = () => {
     const mediaType = 'tv'
