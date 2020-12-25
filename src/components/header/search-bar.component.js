@@ -44,14 +44,14 @@ export const SearchBar = () => {
   };
 
   useEffect(() => {
-    const { query, value } = qs.parse(location.search);
+    const { query = "", value = "" } = qs.parse(location.search);
     setQuery(query);
     setCategory(value);
   }, [location.search]);
 
   return (
     <>
-       <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="input-dropdown">
           <select className="select" value={category} onChange={handleCategoryChange}>
             <option value="">Category</option>
